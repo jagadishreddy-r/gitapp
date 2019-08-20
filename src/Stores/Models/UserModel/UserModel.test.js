@@ -9,7 +9,13 @@ describe('usermodel', () => {
     expect(userModel.repoLink).toBe('repolink');
   });
   it('should test the getrepos function ', () => {
-    const userModel = new UserModel();
+    const userModel = new UserModel(
+      1,
+      'aaron',
+      'hllo',
+      'repolink',
+      new RepoApi(),
+    );
     userModel.getRepos();
     expect(userModel.repos.length).toBe(30);
   });

@@ -5,12 +5,16 @@ class UserModel {
   profilePic;
   repoLink;
   repos = [];
-  constructor(id, userName, profilePic, repoLink) {
+  serviceName;
+  constructor(id, userName, profilePic, repoLink, serviceName) {
     this.id = id;
     this.userName = userName;
     this.repoLink = repoLink;
     this.profilePic = profilePic;
+    this.serviceName = serviceName;
   }
-  getRepos() {}
+  getRepos() {
+    this.repos = this.serviceName.getRepos();
+  }
 }
 export default UserModel;
