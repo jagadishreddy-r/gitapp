@@ -1,5 +1,5 @@
 import UserModel from './index.js';
-import RepoApi from '../../../Services/index.fixtures';
+import UserFixture from '../../../Services/UserFixture';
 describe('usermodel', () => {
   it('should able create instance with given values ', () => {
     const userModel = new UserModel(1, 'jagadish', 'piclink', 'repolink');
@@ -14,7 +14,7 @@ describe('usermodel', () => {
       'aaron',
       'hllo',
       'repolink',
-      new RepoApi(),
+      new UserFixture(),
     );
     userModel.getRepos();
     expect(userModel.repos.length).toBe(30);
