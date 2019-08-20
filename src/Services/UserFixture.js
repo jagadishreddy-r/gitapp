@@ -1,5 +1,5 @@
 class UserFixture {
-  getUsers(link) {
+  getUsers() {
     return [
       {
         login: 'mojombo',

@@ -1,6 +1,6 @@
 class UserServices {
-  getUsers(link) {
-    return fetch(link)
+  getUsers() {
+    return fetch('https://api.github.com/users')
       .then(response => {
         return response.json();
       })

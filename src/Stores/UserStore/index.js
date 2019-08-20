@@ -1,3 +1,4 @@
+import UserModel from '../Models/UserModel/index';
 class UserStore {
   serviceName;
   users = [];
@@ -5,7 +6,12 @@ class UserStore {
     this.serviceName = serviceName;
   }
   getUsers() {
-    this.users = this.serviceName.getUsers('https://api.github.com/users');
+    const response = this.serviceName.getUsers();
+    response.map(item => {
+      this.users.push(
+        new UserModel(item.id, item.login, item.avatar_url, item.repos_url),
+      );
+    });
   }
 }
 export default UserStore;
