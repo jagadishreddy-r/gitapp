@@ -1,4 +1,5 @@
 import RepoApi from '../../../Services/index.api';
+import RepoModel from '../RepoModel';
 class UserModel {
   id;
   userName;
@@ -14,7 +15,16 @@ class UserModel {
     this.serviceName = serviceName;
   }
   getRepos() {
-    this.repos = this.serviceName.getRepos();
+    this.serviceName.getRepos().map(obj => {
+      this.repos.push(
+        new RepoModel(
+          obj.id,
+          obj.owner.login,
+          obj.stargazers_count,
+          obj.forks_count,
+        ),
+      );
+    });
   }
 }
 export default UserModel;
