@@ -712,5 +712,6 @@ describe('userStore', () => {
       },
     ];
     expect(userStore.users.length).toBe(data.length);
+    console.log(userStore.users);
   });
 });
