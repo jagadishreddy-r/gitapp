@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, FlatList} from 'react-native';
+import {RepoHeader, RepoText} from './styledComponents';
 import Repository from './Repository';
 import UserModel from '../../../Stores/Models/UserModel';
 import UserServices from '../../../Services/UserServices';
@@ -12,6 +13,11 @@ class Repositories extends Component {
   render() {
     return (
       <View>
+        <RepoHeader>
+          <RepoText>Repository name</RepoText>
+          <Text>Stars </Text>
+          <Text>Forks</Text>
+        </RepoHeader>
         <FlatList
           data={userModel.repos}
           extraData={userModel.repos.slice()}
