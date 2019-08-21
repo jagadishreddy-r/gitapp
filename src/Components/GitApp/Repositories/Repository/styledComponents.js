@@ -5,30 +5,27 @@ const width = Dimensions.get('window').width;
 
 export const RepoContainer = styled.View`
   background-color: blue;
-  position: relative;
 
-  color: white;
   display: flex;
-  flex-direction: row;
-  position: relative;
-
-  align-items: center;
+  justify-content: space-between;
   width: ${width};
+  padding: 10px;
   height: 70;
-  border-width: 0.5;
-  border-color: white;
+  margin: 1px;
 `;
 export const RepoText = styled.Text`
   color: white;
-  left: 15;
+  font-size: 18px;
 `;
 export const ForkText = styled.Text`
-  position: absolute;
-  right: 15;
   color: white;
 `;
 export const StarText = styled.Text`
-  position: absolute;
-  left: 250;
   color: white;
+`;
+export const StarandFork = styled.View`
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
 `;
