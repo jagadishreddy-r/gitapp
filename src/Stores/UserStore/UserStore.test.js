@@ -711,7 +711,7 @@ describe('userStore', () => {
         site_admin: false,
       },
     ];
-    console.log(userStore.users);
+
     expect(userStore.users.length).toBe(0);
   });
 });

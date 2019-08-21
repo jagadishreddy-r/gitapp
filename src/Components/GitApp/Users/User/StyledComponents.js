@@ -6,11 +6,11 @@ export const ProfilePic = styled.Image`
   border-radius: 25;
   margin: 10px;
 `;
-export const Name = styled.Text`
+export const UserName = styled.Text`
   font-size: 20;
   color: white;
 `;
-export const Div = styled.View`
+export const UserItem = styled.View`
   margin: 2px;
   display: flex;
   flex-direction: row;
