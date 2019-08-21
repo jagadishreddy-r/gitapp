@@ -6,9 +6,8 @@ import Repository from './Repository';
 
 @observer
 class Repositories extends Component {
-  constructor(props) {
-    super(props);
-    props.user.getRepos();
+  componentDidMount() {
+    this.props.user.getRepos();
   }
   render() {
     const {user} = this.props;
