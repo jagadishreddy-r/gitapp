@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import Repository from './Repository';
-import UserStore from '../../../Stores/UserStore';
+import UserModel from '../../../Stores/Models/UserModel';
 import UserServices from '../../../Services/UserServices';
-const userStore = new UserStore(new UserServices());
+import {observer} from 'mobx-react';
+const userModel = new UserModel(1, 2, 3, 'http', new UserServices());
+userModel.getRepos();
+
+@observer
 class Repositories extends Component {
-  getRepos = () => {
-    console.log(1);
-    console.log(userStore.users.repos);
-  };
   render() {
     return (
       <View>
-        {this.getRepos()}
         <FlatList
-          data={userStore.users.repos}
+          data={userModel.repos}
+          extraData={userModel.repos.slice()}
           renderItem={({item}) => <Repository repo={item} />}
         />
       </View>
