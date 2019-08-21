@@ -1,10 +1,11 @@
 import RepoModel from '../RepoModel';
+import {observable} from 'mobx';
 class UserModel {
   id;
   userName;
   profilePic;
   repoLink;
-  repos = [];
+  @observable repos = [];
   serviceName;
   constructor(id, userName, profilePic, repoLink, serviceName) {
     this.id = id;
@@ -15,16 +16,18 @@ class UserModel {
   }
   getRepos() {
     if (this.repos.length === 0) {
-      this.serviceName.getRepos().map(obj => {
-        this.repos.push(
-          new RepoModel(
-            obj.id,
-            obj.owner.login,
-            obj.stargazers_count,
-            obj.forks_count,
-          ),
-        );
-      });
+      this.serviceName.getRepos().then(response =>
+        response.map(obj => {
+          this.repos.push(
+            new RepoModel(
+              obj.id,
+              obj.name,
+              obj.stargazers_count,
+              obj.forks_count,
+            ),
+          );
+        }),
+      );
     }
   }
 }

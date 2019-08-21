@@ -16,6 +16,7 @@ describe('usermodel', () => {
       'repolink',
       new UserFixture(),
     );
+    //TODO:
     userModel.getRepos();
     expect(userModel.repos.length).toBe(30);
   });
