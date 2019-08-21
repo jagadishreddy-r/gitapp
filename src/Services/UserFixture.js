@@ -1,9 +1,10 @@
 import repodata from '../Fixtures/repodata.json';
 import userdata from '../Fixtures/userdata.json';
 class UserFixture {
-  getUsers() {
-    return userdata;
-  }
+  getUsers = () => {
+    return Promise.resolve(userdata);
+  };
+
   getRepos = () => {
     return Promise.resolve(repodata);
   };
