@@ -1,7 +1,8 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
-const App = () => {
-  return <></>;
-};
+import GitApp from './src/Components/GitApp';
+function App() {
+  return <GitApp />;
+}
 
 export default App;
