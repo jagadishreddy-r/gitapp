@@ -16,7 +16,7 @@ class UserModel {
   }
   getRepos() {
     if (this.repos.length === 0) {
-      this.serviceName.getRepos().then(response =>
+      this.serviceName.getRepos(this.repoLink).then(response =>
         response.map(obj => {
           this.repos.push(
             new RepoModel(

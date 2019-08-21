@@ -8,8 +8,8 @@ class UserServices {
         return e;
       });
   }
-  getRepos() {
-    return fetch('https://api.github.com/users/mojombo/repos')
+  getRepos(link) {
+    return fetch(link)
       .then(response => {
         return response.json();
       })

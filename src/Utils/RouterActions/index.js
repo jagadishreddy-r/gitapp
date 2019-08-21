@@ -1,7 +1,7 @@
-import {Action} from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 class RouterActions {
   goRepoScreen = user => {
-    Action.repo({user});
+    Actions.repos({user});
   };
 }
 export default RouterActions;

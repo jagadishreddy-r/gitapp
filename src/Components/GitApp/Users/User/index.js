@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {ProfilePic, UserName, UserItem} from './StyledComponents';
 import RouterActions from '../../../../Utils/RouterActions';
+import {Actions} from 'react-native-router-flux';
 const routerActions = new RouterActions();
 class User extends Component {
   // TODO: placeholder image
