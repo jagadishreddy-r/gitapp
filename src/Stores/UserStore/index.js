@@ -1,6 +1,6 @@
+import {observable} from 'mobx';
 import UserModel from '../Models/UserModel/index';
 import UserServices from '../../Services/UserServices';
-import {observable} from 'mobx';
 class UserStore {
   serviceName;
   @observable users = [];
