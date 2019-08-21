@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {ProfilePic, UserName, UserItem} from './StyledComponents';
+import goRepoScreen from '../../../../RouterActions';
 class User extends Component {
   // TODO: placeholder image
   render() {

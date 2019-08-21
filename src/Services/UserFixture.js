@@ -5,8 +5,8 @@ class UserFixture {
     return Promise.resolve(userdata);
   };
 
-  getRepos() {
-    return repodata;
-  }
+  getRepos = () => {
+    return Promise.resolve(repodata);
+  };
 }
 export default UserFixture;
