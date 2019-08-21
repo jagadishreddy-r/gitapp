@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {ProfilePic, UserName, UserItem} from './StyledComponents';
-import RouterActions from '../../../../RouterActions';
+import RouterActions from '../../../../Utils/RouterActions';
 const routerActions = new RouterActions();
 class User extends Component {
   // TODO: placeholder image

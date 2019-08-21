@@ -1,7 +1,7 @@
 import {render, fireEvent} from 'react-native-testing-library';
 import User from './index';
 import UserModel from '../../../../Stores/Models/UserModel/index';
-import RouterActions from '../../../../RouterActions';
+import RouterActions from '../../../../Utils/RouterActions';
 import 'jest-styled-components';
 
 describe('User', () => {
