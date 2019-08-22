@@ -2,10 +2,11 @@ import {observable, action} from 'mobx';
 import UserModel from '../Models/UserModel/index';
 import UserServices from '../../Services/UserServices';
 import API_STATE from '../../Constants/apiStates';
+import {setLocale} from '../../Utils/language.utils';
 class UserStore {
   serviceName;
   @observable users = [];
-  @observable langauge;
+  @observable language = 'en';
 
   @observable userPageState = API_STATE.loading;
   constructor(serviceName) {
@@ -15,9 +16,11 @@ class UserStore {
     this.userPageState = API_STATE.failure;
   };
   @action.bound
-  changeLangauge = value => {
-    this.langauge = value;
-  };
+  changeLanguage(selectedLanguage) {
+    this.language = selectedLanguage;
+    setLocale(selectedLanguage);
+    console.log(this.language);
+  }
   getUsers() {
     this.serviceName.getUsers(this.onFailure).then(response => {
       response.map(item => {
