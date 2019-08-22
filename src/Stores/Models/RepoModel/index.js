@@ -1,13 +1,13 @@
 class RepoModel {
   id;
   name;
-  stargazers_count;
-  forks_count;
-  constructor(id, name, stargazers_count, forks_count) {
+  stargazersCount;
+  forksCount;
+  constructor(id, name, stargazersCount, forksCount) {
     this.id = id;
     this.name = name;
-    this.stargazers_count = stargazers_count;
-    this.forks_count = forks_count;
+    this.stargazersCount = stargazersCount;
+    this.forksCount = forksCount;
   }
 }
 export default RepoModel;

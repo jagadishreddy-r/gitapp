@@ -19,11 +19,11 @@ class Repository extends Component {
         <StarandFork>
           <IconWithCount>
             <Icon name="star" size={20} />
-            <StarText> Stars:{this.props.repo.stargazers_count}</StarText>
+            <StarText> Stars:{this.props.repo.stargazersCount}</StarText>
           </IconWithCount>
           <IconWithCount>
             <ForkIcon source={require('./fork.png')} />
-            <ForkText> Forks:{this.props.repo.forks_count}</ForkText>
+            <ForkText> Forks:{this.props.repo.forksCount}</ForkText>
           </IconWithCount>
         </StarandFork>
       </RepoContainer>
