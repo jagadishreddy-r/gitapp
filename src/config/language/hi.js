@@ -1,6 +1,6 @@
 export default {
   Users: 'उपयोगकर्ताओं',
-  Repos: 'खजाने',
+  Repos: ' की खजाने',
   Stars: 'सितारों',
   Forks: 'कांटे',
 };

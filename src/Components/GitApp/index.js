@@ -25,7 +25,6 @@ class GitApp extends Component {
             renderRightButton={<DropDown userStore={userStore} />}
           />
           <Scene
-            title={translate('Repos')}
             userLanguage={userStore.language}
             key="repos"
             component={Repositories}

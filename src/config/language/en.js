@@ -1,6 +1,6 @@
 export default {
   Users: 'Users',
-  Repos: 'Repositories',
+  Repos: "'s Repositories",
   Stars: 'Stars',
   Forks: 'Forks',
 };
