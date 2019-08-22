@@ -9,8 +9,7 @@ import UserStore from '../../Stores/UserStore';
 import UserServices from '../../Services/UserServices';
 import i18n from '../../Utils/I18n';
 const userStore = new UserStore(new UserServices());
-userStore.getUsers();
-@observer
+
 class GitApp extends Component {
   render() {
     i18n.locale = userStore.langauge;
@@ -21,7 +20,7 @@ class GitApp extends Component {
             key="users"
             title="Users"
             component={Users}
-            users={userStore.users}
+            userStore={userStore}
             initial
             renderRightButton={
               <Picker
