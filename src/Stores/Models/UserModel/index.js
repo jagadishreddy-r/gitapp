@@ -22,8 +22,8 @@ class UserModel {
             new RepoModel(
               obj.id,
               obj.name,
-              obj.stargazers_count,
-              obj.forks_count,
+              obj.stargazersCount,
+              obj.forksCount,
             ),
           );
         }),
