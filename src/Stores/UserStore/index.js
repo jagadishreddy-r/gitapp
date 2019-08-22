@@ -19,6 +19,15 @@ class UserStore {
     this.langauge = value;
   };
   getUsers() {
+    this.users.push(
+      new UserModel(
+        'vsd',
+        'vjtyjtdyjdtyjdtyjdtyjddsv',
+        'vdsvdv',
+        'vdsvd',
+        new UserServices(),
+      ),
+    );
     this.serviceName.getUsers(this.onFailure).then(response => {
       response.map(item => {
         this.userPageState = API_STATE.success;

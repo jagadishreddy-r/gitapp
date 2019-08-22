@@ -35,7 +35,7 @@ class GitApp extends Component {
               </Picker>
             }
           />
-          <Scene title="Repositories" key="repos" component={Repositories} />
+          <Scene key="repos" component={Repositories} />
         </Scene>
       </Router>
     );

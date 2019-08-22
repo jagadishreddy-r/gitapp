@@ -32,7 +32,6 @@ export const StarandFork = styled.View`
   justify-content: space-around;
 `;
 export const IconWithCount = styled.View`
-  background: #f5fcff;
   padding: 2px;
   display: flex;
   flex-direction: row;
