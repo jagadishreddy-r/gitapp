@@ -21,7 +21,7 @@ export const UserItem = styled.View`
 export const PlaceHolder = styled.View`
   height: 50;
   width: 50;
-  background-color: red;
+  background-color: #ccc;
   border-radius: 25;
   margin: 5px;
 `;
