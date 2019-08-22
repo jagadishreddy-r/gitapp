@@ -13,11 +13,12 @@ class GitApp extends Component {
         <Scene key="root">
           <Scene
             key="users"
+            title="Users"
             component={Users}
             users={userStore.users}
             initial
           />
-          <Scene key="repos" component={Repositories} />
+          <Scene title="Repositories" key="repos" component={Repositories} />
         </Scene>
       </Router>
     );
