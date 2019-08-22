@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+
 import {ActivityIndicator, FlatList, Text} from 'react-native';
+
 import Repository from './Repository';
 import {CenterAlign} from '../Users/StyledComponent';
 import API_STATE from '../../../Constants/apiStates';
@@ -12,6 +14,7 @@ class Repositories extends Component {
   }
   renderPage = () => {
     const {user} = this.props;
+
     switch (user.repoPageState) {
       case API_STATE.loading:
         return (

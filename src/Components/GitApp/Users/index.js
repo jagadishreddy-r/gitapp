@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import {observer} from 'mobx-react';
+
 import {ActivityIndicator, FlatList, Text} from 'react-native';
 
-import {observer} from 'mobx-react';
 import {CenterAlign} from './StyledComponent';
+
 import User from './User';
 import API_STATE from '../../../Constants/apiStates';
 @observer
