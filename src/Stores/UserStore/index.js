@@ -9,8 +9,11 @@ class UserStore {
   constructor(serviceName) {
     this.serviceName = serviceName;
   }
+  onFailure = () => {
+    this.userPageState = APISTATE.failure;
+  };
   getUsers() {
-    this.serviceName.getUsers().then(response => {
+    this.serviceName.getUsers(this.onFailure).then(response => {
       response.map(item => {
         this.userPageState = APISTATE.success;
 
@@ -24,9 +27,7 @@ class UserStore {
           ),
         );
       });
-    }).catch = e => {
-      this.userPageState = APISTATE.failure;
-    };
+    });
   }
 }
 export default UserStore;

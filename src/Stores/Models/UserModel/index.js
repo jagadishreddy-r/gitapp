@@ -16,9 +16,14 @@ class UserModel {
     this.profilePic = profilePic;
     this.serviceName = serviceName;
   }
+
+  onFailure = () => {
+    this.repoPageState = APISTATE.failure;
+  };
   getRepos() {
     if (this.repos.length === 0) {
-      this.serviceName.getRepos(this.repoLink).then(response =>
+      this.repoPageState = APISTATE.loading;
+      this.serviceName.getRepos(this.repoLink, this.onFailure).then(response =>
         response.map(obj => {
           this.repoPageState = APISTATE.success;
           this.repos.push(
@@ -30,10 +35,7 @@ class UserModel {
             ),
           );
         }),
-      ).catch = e => {
-        this.repoPageState = APISTATE.failure;
-        console.log(e);
-      };
+      );
     }
   }
 }

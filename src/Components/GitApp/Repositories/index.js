@@ -11,10 +11,11 @@ class Repositories extends Component {
   }
   renderPage = () => {
     const {user} = this.props;
-    if (user.repoPageState === APISTATE.loading)
+    if (user.repoPageState === APISTATE.loading) {
       return <ActivityIndicator size="large" color="#0000ff" />;
-    else if (user.repoPageState === APISTATE.failure)
+    } else if (user.repoPageState === APISTATE.failure) {
       return <Text>Please connect to internet</Text>;
+    }
     return (
       <FlatList
         data={user.repos}

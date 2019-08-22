@@ -10,8 +10,9 @@ class Users extends Component {
     const {userStore} = this.props;
     if (userStore.userPageState === APISTATE.loading) {
       return <ActivityIndicator size="large" color="#0000ff" />;
-    } else if (userStore.userPageState === APISTATE.failure)
+    } else if (userStore.userPageState === APISTATE.failure) {
       return <Text>Please connect to internet</Text>;
+    }
     return (
       <FlatList
         data={userStore.users}
