@@ -5,8 +5,10 @@ import Users from './Users';
 import UserStore from '../../Stores/UserStore';
 import UserServices from '../../Services/UserServices';
 const userStore = new UserStore(new UserServices());
-userStore.getUsers();
 class GitApp extends Component {
+  componentDidMount() {
+    userStore.getUsers();
+  }
   render() {
     return (
       <Router>
