@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import {View, FlatList} from 'react-native';
-import {ListView} from './styledComponents';
 import Repository from './Repository';
 
 @observer
@@ -13,7 +12,7 @@ class Repositories extends Component {
     const {user} = this.props;
     return (
       <View>
-        <ListView
+        <FlatList
           data={user.repos}
           extraData={user.repos.slice()}
           renderItem={({item}) => <Repository repo={item} />}
