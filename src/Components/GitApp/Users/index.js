@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {FlatList, Text, ActivityIndicator} from 'react-native';
+import {FlatList} from 'react-native';
 import {observer} from 'mobx-react';
-
+import {Loader, ErrorMessage} from './StyledComponent';
 import User from './User';
 import APISTATE from '../../../Constants/apiStates';
 @observer
@@ -9,9 +9,9 @@ class Users extends Component {
   renderPage = () => {
     const {userStore} = this.props;
     if (userStore.userPageState === APISTATE.loading) {
-      return <ActivityIndicator size="large" color="#0000ff" />;
+      return <Loader size="large" color="#0000ff" />;
     } else if (userStore.userPageState === APISTATE.failure) {
-      return <Text>Please connect to internet</Text>;
+      return <ErrorMessage>Please connect to internet</ErrorMessage>;
     }
     return (
       <FlatList

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import {View, FlatList, Text, ActivityIndicator} from 'react-native';
+import {FlatList} from 'react-native';
 import Repository from './Repository';
+import {Loader, ErrorMessage} from '../Users/StyledComponent';
 import APISTATE from '../../../Constants/apiStates';
 
 @observer
@@ -12,9 +13,9 @@ class Repositories extends Component {
   renderPage = () => {
     const {user} = this.props;
     if (user.repoPageState === APISTATE.loading) {
-      return <ActivityIndicator size="large" color="#0000ff" />;
+      return <Loader size="large" color="#0000ff" />;
     } else if (user.repoPageState === APISTATE.failure) {
-      return <Text>Please connect to internet</Text>;
+      return <ErrorMessage>Please connect to internet</ErrorMessage>;
     }
     return (
       <FlatList
@@ -25,7 +26,7 @@ class Repositories extends Component {
     );
   };
   render() {
-    return <View>{this.renderPage()}</View>;
+    return <>{this.renderPage()}</>;
   }
 }
 export default Repositories;
