@@ -1,6 +1,6 @@
-const APISTATE = {
+const API_STATE = {
   loading: 'loading',
   success: 'success',
   failure: 'failure',
 };
-export default APISTATE;
+export default API_STATE;

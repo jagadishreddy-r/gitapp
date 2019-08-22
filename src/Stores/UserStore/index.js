@@ -1,21 +1,21 @@
 import {observable} from 'mobx';
 import UserModel from '../Models/UserModel/index';
 import UserServices from '../../Services/UserServices';
-import APISTATE from '../../Constants/apiStates';
+import API_STATE from '../../Constants/apiStates';
 class UserStore {
   serviceName;
   @observable users = [];
-  @observable userPageState = APISTATE.loading;
+  @observable userPageState = API_STATE.loading;
   constructor(serviceName) {
     this.serviceName = serviceName;
   }
   onFailure = () => {
-    this.userPageState = APISTATE.failure;
+    this.userPageState = API_STATE.failure;
   };
   getUsers() {
     this.serviceName.getUsers(this.onFailure).then(response => {
       response.map(item => {
-        this.userPageState = APISTATE.success;
+        this.userPageState = API_STATE.success;
 
         this.users.push(
           new UserModel(

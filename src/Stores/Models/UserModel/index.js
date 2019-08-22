@@ -1,13 +1,13 @@
 import RepoModel from '../RepoModel';
 import {observable} from 'mobx';
-import APISTATE from '../../../Constants/apiStates';
+import API_STATE from '../../../Constants/apiStates';
 class UserModel {
   id;
   userName;
   profilePic;
   repoLink;
   @observable repos = [];
-  @observable repoPageState = APISTATE.loading;
+  @observable repoPageState = API_STATE.loading;
   serviceName;
   constructor(id, userName, profilePic, repoLink, serviceName) {
     this.id = id;
@@ -18,14 +18,14 @@ class UserModel {
   }
 
   onFailure = () => {
-    this.repoPageState = APISTATE.failure;
+    this.repoPageState = API_STATE.failure;
   };
   getRepos() {
     if (this.repos.length === 0) {
-      this.repoPageState = APISTATE.loading;
+      this.repoPageState = API_STATE.loading;
       this.serviceName.getRepos(this.repoLink, this.onFailure).then(response =>
         response.map(obj => {
-          this.repoPageState = APISTATE.success;
+          this.repoPageState = API_STATE.success;
           this.repos.push(
             new RepoModel(
               obj.id,
